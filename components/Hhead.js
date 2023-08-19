@@ -1,9 +1,9 @@
 import Head from 'next/head';
 
-export default function Hhead() {
+export default function Hhead(props) {
     return (
       <Head>
-        <title>Home</title>
+        <title>{props.data}</title>
       </Head>
 
     )
