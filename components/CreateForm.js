@@ -25,9 +25,9 @@ const CreateForm = ({data}) => {
         {/* table body */}
         <tbody>
             {data.map(obj =>(
-                <tr>
-                    <td className='border border-black center '>{obj.Location}</td>
-                    {obj.hourly_sales.map(x =>(
+                <tr key={obj.id}>
+                    <td className='border border-black center '>{obj.location}</td>
+                    {sales.map(x =>(
                         
                        <td className='border border-black center '>{x}</td>
                        
