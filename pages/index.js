@@ -9,6 +9,28 @@ export default function CookieStandAdmin() {
   const [json, serJson] = useState([])
   const { user, token } = useAuth()
   
+  async function PostData(cookies) {
+    if (token){
+    const url = baseUrl+"/api/v1/cookie_stands/"
+    const option = {
+      method: "POST",
+      body:JSON.stringify(cookies),
+      headers: {
+        "Authorization": `Bearer ${token.access}`,
+        "Content-Type": "application/json"
+        
+      }
+      
+    }
+    const res = await fetch(url, option)
+    if (res.status === 201) {
+      serJson([...json, cookies])
+      
+  } else {
+      console.log("Failed to access protected route.");
+  }
+  }
+  }
 
   async function getData() {
     if (token) {
