@@ -50,7 +50,6 @@ export function AuthProvider(props){
                     id : decodedToken.user_id, 
                 }
             }
-            console.log(decodedToken.username)
             setState(prevState=> ({...prevState,... newState}));
             return 200
         }
